@@ -1,0 +1,96 @@
+<!-- index.html base para Professor DUTRA -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor DUTRA - Hub de Legislação de Trânsito</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="headline">DUTRA FLOW</h1>
+        <p class="subheadline">A Inteligência Artificial Especialista em Legislação de Trânsito Brasileira.</p>
+    </header>
+
+    <main class="main-content">
+        <div class="content-area">
+            <section class="suggestions-section">
+                <h2 class="suggestions-title">O que você quer aprender hoje?</h2>
+                <div class="suggestions-list">
+                    <button class="suggestion-btn">ULTRAPASSAGEM</button>
+                    <button class="suggestion-btn">POLÍCIA RODOVIÁRIA FEDERAL</button>
+                    <button class="suggestion-btn">CRIMES DE TRÂNSITO</button>
+                    <button class="suggestion-btn">VEÍCULOS ESCOLARES</button>
+                    <button class="suggestion-btn">ÁLCOOL</button>
+                    <button class="suggestion-btn">INFRAÇÕES DE TRÂNSITO</button>
+                    <button class="suggestion-btn">RECURSO DE MULTA</button>
+                    <button class="suggestion-btn">CÂMARAS TEMÁTICAS</button>
+                </div>
+            </section>
+
+            <section class="search-section">
+                <form class="search-form" autocomplete="off">
+                    <input type="text" class="search-input" placeholder="Digite o tema ou termo de interesse..." name="query" id="searchQuery">
+                    <button type="submit" class="search-btn">Buscar</button>
+                </form>
+            </section>
+
+            <section class="results-section">
+                <div class="tabs">
+                    <button class="tab active" data-tab="ctb">CTB e Anexo I</button>
+                    <button class="tab" data-tab="resolucoes">Resoluções/Manuais</button>
+                    <button class="tab" data-tab="jurisprudencias">Jurisprudências</button>
+                    <button class="tab" data-tab="doutrinas">Doutrinas</button>
+                    <button class="tab" data-tab="informativos">Informativos</button>
+                </div>
+                <div class="tab-content" id="ctb">
+                    <p>Resultados de CTB e Anexo I aparecerão aqui.</p>
+                </div>
+                <div class="tab-content" id="resolucoes" style="display:none;">
+                    <p>Resultados de Resoluções/Manuais aparecerão aqui.</p>
+                </div>
+                <div class="tab-content" id="jurisprudencias" style="display:none;">
+                    <p>Resultados de Jurisprudências aparecerão aqui.</p>
+                </div>
+                <div class="tab-content" id="doutrinas" style="display:none;">
+                    <p>Resultados de Doutrinas aparecerão aqui.</p>
+                </div>
+                <div class="tab-content" id="informativos" style="display:none;">
+                    <p>Resultados de Informativos aparecerão aqui.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Scripts para interatividade básica -->
+    <script>
+    // 1. Preencher o campo de busca ao clicar nas sugestões
+    document.querySelectorAll('.suggestion-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.getElementById('searchQuery').value = this.textContent;
+            document.getElementById('searchQuery').focus();
+        });
+    });
+
+    // 2. Alternar abas e mostrar o conteúdo correto
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active de todas as abas
+            tabs.forEach(t => t.classList.remove('active'));
+            // Esconde todos os conteúdos
+            tabContents.forEach(tc => tc.style.display = 'none');
+            // Ativa a aba clicada
+            this.classList.add('active');
+            // Mostra o conteúdo correspondente
+            const tabId = this.getAttribute('data-tab');
+            document.getElementById(tabId).style.display = 'block';
+        });
+    });
+    // Garante que a primeira aba esteja visível ao carregar
+    document.getElementById('ctb').style.display = 'block';
+    </script>
+</body>
+</html> 

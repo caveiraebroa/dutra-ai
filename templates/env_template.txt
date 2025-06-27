@@ -1,0 +1,37 @@
+# Professor DUTRA - Template de Variáveis de Ambiente
+# Copie este conteúdo para um arquivo .env na raiz do projeto
+
+# Configurações Flask
+SECRET_KEY=dutra-ia-secret-key-2024-super-segura-e-unica
+FLASK_ENV=development
+FLASK_DEBUG=True
+
+# Configurações Elasticsearch
+ELASTICSEARCH_HOST=professor-dutra-d99e7d.es.us-central1.gcp.elastic.cloud
+ELASTICSEARCH_PORT=443
+ELASTICSEARCH_USE_SSL=True
+ELASTICSEARCH_API_KEY=TnQtY21KY0JEeVJWNUxUTmpNc206bVcxNmNLOHlrbmw5eXlZTkFibHBWQQ==
+ELASTICSEARCH_PROJECT_ID=d99e7d0edd0a4cc69b38e5c75efb8421
+
+# Configurações OpenAI
+OPENAI_API_KEY=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
+OPENAI_MODEL=gpt-3.5-turbo
+
+# Configurações de Banco de Dados
+DATABASE_URL=sqlite:///dutra.db
+
+# Configurações de Email (para futuras funcionalidades)
+MAIL_SERVER=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USE_TLS=True
+MAIL_USERNAME=seu-email@gmail.com
+MAIL_PASSWORD=sua-senha-de-app
+
+# APIs de Notícias (para funcionalidades futuras)
+GNEWS_API_KEY=715eee72a8075265700c93c67cfa1750
+NEWSAPI_API_KEY=d5a5fac8e6de4e5e81ac5b3042e59f7b
+
+# Configurações de Debug (para dashboard do desenvolvedor)
+DEBUG_MODE=True
+LOG_LEVEL=DEBUG
+SHOW_ERROR_DETAILS=True 
